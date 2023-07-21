@@ -1,0 +1,106 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 5.5.16 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use vasu_database;
+Database changed
+mysql> select * from study;
++------+----------+------+----------+------------+----------+
+| id   | name     | age  | mail     | phonum     | village  |
++------+----------+------+----------+------------+----------+
+|   21 | ptpalli  |   21 | vasu@123 | 6301725926 | ptpalli  |
+|   21 | ptpalli  |   21 | vasu@123 | 6301725926 | ptpalli  |
+|   22 | tekkali  |   22 | deva@234 | 9676645291 | tekkali  |
+|   22 | ptpalli  |   22 | vasu@123 | 6301725926 | ptpalli  |
+|   23 | ptppalli |   23 | vasu@123 | 6301725926 | ptppalli |
+|   22 | tekkali  |   22 | deva@123 | 9679945291 | tekkali  |
+|    1 | vasu     |   21 | vasu@123 | 6301725926 | ptpalli  |
+|    2 | deva     |   22 | deva@123 | 9676645291 | sklm     |
++------+----------+------+----------+------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> drop table study;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> select * from study;
+ERROR 1146 (42S02): Table 'vasu_database.study' doesn't exist
+mysql> desc study;
+ERROR 1146 (42S02): Table 'vasu_database.study' doesn't exist
+mysql> create table study(int id(20),name varchar(20),age int(20), mail varchar(20),phonum bigint(20),village varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int id(20),name varchar(2
+0),age int(20), mail varchar(20),phonum bigint(20),vill' at line 1
+mysql> create table studyt(id int(20),name varchar(20),age int(20), mail varchar(20),phonum bigint(20),village varchar(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> drop table studyt;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table study(id int(20),name varchar(20),age int(20), mail varchar(20),phonum bigint(20),village varchar(20));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> select * from study;
+Empty set (0.00 sec)
+
+mysql> select * from study;
++------+------+------+----------------+------------+---------+
+| id   | name | age  | mail           | phonum     | village |
++------+------+------+----------------+------------+---------+
+|    1 | vasu |   21 | vasu@gmail.com | 6301725926 | ptpalli |
++------+------+------+----------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from study;
++------+------------+------+-------------------+------------+----------+
+| id   | name       | age  | mail              | phonum     | village  |
++------+------------+------+-------------------+------------+----------+
+|    1 | vasu       |   21 | vasu@gmail.com    | 6301725926 | ptpalli  |
+|    2 | deva       |   22 | deva@gmail.com    | 9676645291 | tekkali  |
+|    3 | rao        |   23 | rao@gmail.com     | 6301989610 | badagam  |
+|    4 | chandrayya |   63 | chandra@gmail.com | 9676645291 | nandigam |
++------+------------+------+-------------------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from study;
++------+------------+------+-------------------+------------+----------+
+| id   | name       | age  | mail              | phonum     | village  |
++------+------------+------+-------------------+------------+----------+
+|    1 | vasu       |   21 | vasu@gmail.com    | 6301725926 | ptpalli  |
+|    2 | deva       |   22 | deva@gmail.com    | 9676645291 | tekkali  |
+|    3 | drakshamma |   23 | rao@gmail.com     | 6301989610 | badagam  |
+|    4 | chandrayya |   63 | chandra@gmail.com | 9676645291 | nandigam |
++------+------------+------+-------------------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from study
+    -> ;
++------+------------+------+-------------------+------------+----------+
+| id   | name       | age  | mail              | phonum     | village  |
++------+------------+------+-------------------+------------+----------+
+|    1 | vasu       |   21 | vasu@gmail.com    | 6301725926 | ptpalli  |
+|    2 | deva       |   22 | deva@gmail.com    | 9676645291 | tekkali  |
+|    3 | drakshamma |   23 | rao@gmail.com     | 6301989610 | badagam  |
+|    4 | chandrayya |   63 | chandra@gmail.com | 9676645291 | nandigam |
++------+------------+------+-------------------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from study;
++------+------------+------+-------------------+------------+----------+
+| id   | name       | age  | mail              | phonum     | village  |
++------+------------+------+-------------------+------------+----------+
+|    1 | vasu       |   21 | vasu@gmail.com    | 6301725926 | ptpalli  |
+|    2 | deva       |   22 | deva@gmail.com    | 9676645291 | tekkali  |
+|    3 | katravalli |   23 | rao@gmail.com     | 6301989610 | badagam  |
+|    4 | chandrayya |   63 | chandra@gmail.com | 9676645291 | nandigam |
++------+------------+------+-------------------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql>
